@@ -23,11 +23,6 @@ class Dipendente{ // super classe
         endif;
     } */
 
-    #metodo magico __get esempio
-    public function __get(){
-        
-    }
-
     // funzione settaggio valori
     function setDati($_nome,$_cognome,$_codiceFiscale,$_tipoContratto,$_numeroMatricola){
         $this->nome=$_nome;
