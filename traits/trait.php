@@ -5,7 +5,7 @@
         protected int $numeroMatricola;
 
         public function specificheContratto(){
-            return $this->tipoContratto;
+            return $this->tipoContratto.' ';
         }
 
         public function specificheMatricola(){

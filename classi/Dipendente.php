@@ -11,25 +11,22 @@ class Dipendente{
         !empty($_nome) || die('Non hai settato il cognome!');
         !empty($_nome) || die('Non hai settato il codice fiscale!');
 
-
         $this->nome=$_nome;
         $this->cognome=$_cognome;
         $this->codiceFiscale=$_codiceFiscale;
 
     }
 
-    function setDati($_tipoContratto,$_numeroMatricola){
+    function setDati($_nome,$_cognome,$_codiceFiscale,$_tipoContratto,$_numeroMatricola){
+        $this->nome=$_nome;
+        $this->cognome=$_cognome;
+        $this->codiceFiscale=$_codiceFiscale;
         $this->tipoContratto=$_tipoContratto;
         $this->numeroMatricola=$_numeroMatricola;
     }
-}
 
-$dipendete1= new Dipendente('Marco','Rossi','324452103MMT');
-$dipendete2= new Dipendente('Matteo','Verdi','324452103MMT');
-$dipendete3= new Dipendente('Luca','Bianchi','324452103MMT');
-var_dump($dipendete1,$dipendete2,$dipendete3);
-$dipendete1->setDati('contratto indeterminato',23451);
-echo $dipendete1->specificheContratto();
-echo ' ';
-echo $dipendete1->specificheMatricola();
-#echo define('DIPENDENTE',new Dipendente('Marco','Rossi','324452103MMT'));
+    function setNome($_nome){
+        return $this->nome=$_nome;
+    }
+    
+}

@@ -1,6 +1,6 @@
 <?php 
 declare(strict_types=1);
-require_once('classe.php');
+require_once('Dipendente.php');
 
 class Ruolo extends Dipendente{
     private $ruolo;
@@ -14,7 +14,6 @@ class Ruolo extends Dipendente{
 
     }
 }
-
 
 $ruolo= new Ruolo('Marco','Rossi','324452103MMT','operaio');
 var_dump($ruolo);
