@@ -1,7 +1,8 @@
 <?php 
-declare(strict_types=1);
+declare(strict_types=1); // stric mode tipizzazione forte!
 require_once('Dipendente.php');
 
+// classe estesa
 class Ruolo extends Dipendente{
     private $ruolo;
 

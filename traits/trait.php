@@ -1,5 +1,6 @@
 <?php
-    declare(strict_types=1);
+    declare(strict_types=1); // stric mode tipizzazione forte!
+    // classe trait
     trait SpecificheDipendente{
         protected string $tipoContratto;
         protected int $numeroMatricola;
