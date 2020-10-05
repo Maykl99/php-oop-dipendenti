@@ -16,6 +16,17 @@ class Dipendente{ // super classe
         $this->codiceFiscale=$_codiceFiscale;
 
     }
+        #metodo magico __set esempio
+    /* public function __set($proprieta,$valore){
+        if(property_exists($this,$proprieta)):
+            $this->$proprieta=$valore;
+        endif;
+    } */
+
+    #metodo magico __get esempio
+    public function __get(){
+        
+    }
 
     // funzione settaggio valori
     function setDati($_nome,$_cognome,$_codiceFiscale,$_tipoContratto,$_numeroMatricola){
