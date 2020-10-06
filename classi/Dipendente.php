@@ -7,21 +7,18 @@ class Dipendente{ // super classe
     use SpecificheDipendente;
     function __construct(string $_nome, string $_cognome, string $_codiceFiscale){
 
-        !empty($_nome) || die('Non hai settato il nome!');
-        !empty($_nome) || die('Non hai settato il cognome!');
-        !empty($_nome) || die('Non hai settato il codice fiscale!');
-
+        if(empty($_nome) || empty($_cognome) || empty($_codiceFiscale)){       
+            throw new Exception("errore, valore vuoto", 15);     
+        }
+        // se i controlli sono verificati
         $this->nome=$_nome;
         $this->cognome=$_cognome;
         $this->codiceFiscale=$_codiceFiscale;
 
+
+
     }
-        #metodo magico __set esempio
-    /* public function __set($proprieta,$valore){
-        if(property_exists($this,$proprieta)):
-            $this->$proprieta=$valore;
-        endif;
-    } */
+    
 
     // funzione settaggio valori
     function setDati($_nome,$_cognome,$_codiceFiscale,$_tipoContratto,$_numeroMatricola){
