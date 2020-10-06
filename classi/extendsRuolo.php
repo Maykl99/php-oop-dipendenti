@@ -6,15 +6,24 @@ require_once('Dipendente.php');
 class Ruolo extends Dipendente{
     private $ruolo;
 
-    function __construct(string $_nome, string $_cognome, string $_codiceFiscale,string $_ruolo){
+    function __construct(string $_nome, string $_cognome, string $_email, string $_codiceFiscale,string $_ruolo){
 
-        parent::__construct($_nome,$_cognome,$_codiceFiscale);
+        parent::__construct($_nome,$_cognome,$_email,$_codiceFiscale);
 
-        !empty($_ruolo) || die('Non hai settato il nome!');
+        if(empty($_ruolo)):
+            throw new Exception("errore, valore vuoto", 5);
+        endif;
+
         $this->ruolo=$_ruolo;
-
     }
 }
 
-$ruolo= new Ruolo('Marco','Rossi','324452103MMT','operaio');
+
+try {
+    $ruolo= new Ruolo('Marco','Rossi','maicolmail@mail.com','324452103MMT','operaio');
+} catch (Exception $e) {
+    echo 'Eccezione: ' . $e->getMessage() . ' riga ' . $e->getLine() .' codice di eccezione '. $e->getCode();
+}
+
+
 var_dump($ruolo);
