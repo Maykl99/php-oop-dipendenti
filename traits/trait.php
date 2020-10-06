@@ -5,6 +5,20 @@
         protected string $tipoContratto;
         protected int $numeroMatricola;
 
+        public function setContratto($_tipoContratto){
+            if(empty($_tipoContratto)):
+                throw new Exception("errore", 1);
+            endif;
+            $this->tipoContratto=$_tipoContratto;
+        }
+
+        public function setMatricola($_numeroMatricola){
+            if(empty($_numeroMatricola)):
+                throw new Exception("errore", 2);
+            endif;
+            $this->numeroMatricola=$_numeroMatricola;
+        }
+
         public function specificheContratto(){
             return $this->tipoContratto.' ';
         }

@@ -10,6 +10,10 @@ try {
     $dipendete3= new Dipendente('Luigi','Bianchi','maicolmail@mail.com','324452103MMT');
     #istanze classe di appertenenza
     $dipendete1->setEmail('nuovolucaverdi@mail.com');
+    $nome=$dipendete1->setContratto('contratto determinato');
+    $nome.=$dipendete1->specificheContratto();
+    $nome.=$dipendete1->setMatricola(2341);
+    $nome.=$dipendete1->specificheMatricola();
     #echo $dipendente1->getEmail();
 } catch (Exception $e) {
     echo 'Eccezione: ' . $e->getMessage() . ' riga ' . $e->getLine() .' codice di eccezione '. $e->getCode();
@@ -17,3 +21,4 @@ try {
 
 
 var_dump($dipendete1,$dipendete2,$dipendete3);
+
